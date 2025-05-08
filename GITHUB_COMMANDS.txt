@@ -1,4 +1,4 @@
-winpty install --id GitHub.cli -e
+winget install --id GitHub.cli -e
 
 direct or move to your desired directory where your files are stored
 
