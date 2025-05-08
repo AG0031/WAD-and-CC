@@ -1,0 +1,26 @@
+Hospital Management Salesforce Guide
+
+
+-built -> create -> apps
+
+-new->custom app-> give name-> next.........
+
+-select hospital manegement form the top right 
+
+-setup-> create -> object -> new costom object -> give names(patient) save and new -> give name (appointment) -> save
+
+-create -> tabs -> new -> object -> select the names we just created...-> include tab off only select hospital manegement...save
+-same for another field 
+
+-now you can see the newly created tab on top left 
+
+-setup -> object -> patient -> coustom field and relationship -> new -> now create the all field label.
+
+-object -> patient -> validation rules -> phone -> insert field -> insert phone -> insert field formula -> NOT(REGEX(Phone__c, "^[0-9]{10}$")) -> error massege -> phone number is not valid ....save and next 
+ - same validation as above insert field Registration date -> formula -> Registration_Date_c > TODAY () -> invalid date....save and next 
+
+-same for date of birth 
+
+-object -> patient -> validation rules -> appointment date -> formula -> DATEVALUE(Appointment_Date__c) < TODAY()
+
+-top left go to patient then new entry entries.
