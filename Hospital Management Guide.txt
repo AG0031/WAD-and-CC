@@ -24,3 +24,7 @@ Hospital Management Salesforce Guide
 -object -> patient -> validation rules -> appointment date -> formula -> DATEVALUE(Appointment_Date__c) < TODAY()
 
 -top left go to patient then new entry entries.
+
+Student Management System Validation Formulas :
+Phone Number : NOT(AND(ISNUMBER(Phone__c), LEN(Phone__c) = 10))
+Enrollment Date : Enrollment_Date__c > TODAY()
