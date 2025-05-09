@@ -1,0 +1,20 @@
+Download Docker Desktop from google and sign in 
+
+Create a folder DockerAssignment 
+
+Create two Files index.js and Dockerfile
+
+index.js
+console.log("Hii I am Rajat");
+
+Dockerfile
+FROM node:alpine
+COPY . /DockerAssignment
+CMD node /DockerAssignment/index.js
+
+Open terminal and Run Following commands
+docker --version (verify if docker is downloaded)
+node index.js
+docker build -t dockerassignment .
+
+Now open Docker Desktop and go to images section and see if the image is visible or not
