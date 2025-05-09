@@ -17,7 +17,7 @@ Hospital Management Salesforce Guide
 -setup -> object -> patient -> coustom field and relationship -> new -> now create the all field label.
 
 -object -> patient -> validation rules -> phone -> insert field -> insert phone -> insert field formula -> NOT(REGEX(Phone__c, "^[0-9]{10}$")) -> error massege -> phone number is not valid ....save and next 
- - same validation as above insert field Registration date -> formula -> Registration_Date_c > TODAY () -> invalid date....save and next 
+ - same validation as above insert field Registration date -> formula -> Registration_Date__c > TODAY () -> invalid date....save and next 
 
 -same for date of birth 
 
