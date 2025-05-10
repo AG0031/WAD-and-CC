@@ -1,0 +1,73 @@
+
+
+Absolutely! Here's a complete step-by-step implementation for viewing your index.html file in the browser using Vagrant + Apache on Ubuntu.
+
+✅ GOAL:
+You want to place an index.html file inside your Vagrant Ubuntu VM and access it in your browser like this:
+
+http://localhost:8080/index.html
+STEP-BY-STEP IMPLEMENTATION
+
+Step 1: Prepare your project folder (on Windows)
+Create a folder:
+
+C:\Users\YourName\Documents\VagrantProject
+Inside that folder, create a file named index.html. Example content:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My College Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to College Dashboard</h1>
+</body>
+</html>
+Open PowerShell or Command Prompt, go into that folder:
+
+cd "C:\Users\YourName\Documents\VagrantProject"
+Initialize Vagrant:
+
+vagrant init ubuntu/bionic64
+Open the Vagrantfile and edit the networking section to add port forwarding:
+
+config.vm.network "forwarded_port", guest: 80, host: 8080
+Save the file and then start your VM:
+
+vagrant up
+Step 2: Set up Apache in Ubuntu VM
+SSH into the VM:
+
+vagrant ssh
+Update packages:
+
+sudo apt update
+sudo apt install -y curl gnupg software-properties-common
+
+Install Apache:
+
+sudo apt install apache2 -y
+Apache automatically runs after install. To confirm:
+
+sudo systemctl status apache2
+(Use q to quit the status output.)
+
+Step 3: Copy the index.html from shared folder to Apache root
+The folder where your Windows index.html is located is shared inside the VM at /vagrant.
+
+From inside the VM, run:
+
+sudo cp /vagrant/index.html /var/www/html/index.html
+Set correct permissions (optional):
+
+sudo chmod 644 /var/www/html/index.html
+
+Step 4: Open it in your browser
+On your Windows host, open a browser.
+
+Go to:
+
+http://localhost:8080/index.html
+You should see:
+
+Welcome to College Dashboard
