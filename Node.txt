@@ -1,0 +1,33 @@
+Make an Instance on AWS and run the following commands on the terminal of instance
+
+//Install node version manager (nvm) by typing the following at the command line.
+
+sudo su -
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+//Activate nvm by typing the following at the command line.
+
+. ~/.nvm/nvm.sh
+
+//Use nvm to install the latest version of Node.js by typing the following at the command line.
+
+nvm install node
+
+//Test that node and npm are installed and running correctly by typing the following at the terminal:
+
+node -v
+npm -v
+
+sudo apt-get update -y
+sudo apt-get install git -y
+
+git --version
+
+git clone https://github.com/AG0031/Node.git
+
+cd Node
+npm install
+
+npm start
+
+Your website will be visible on http://localhost:3000
